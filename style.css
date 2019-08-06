@@ -1,0 +1,196 @@
+body{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	overflow-x:hidden;
+}
+.headerClass{
+	display:flex;
+	flex-direction: row;
+	background-color: red;
+	justify-content: space-between;
+	height:auto;
+	position:fixed;
+	top:0px;
+	width:100%;
+	z-index:1; /* else the homePageFlex was going on top of nav bar as u scroll up the page!!*/
+
+}
+.navLinks{
+	background-color: yellow;
+	margin-top:0px;
+	display:flex; 
+	flex-direction: row;
+}
+.navLinks .navLinksList{
+	background-color: pink;  /**** OOOHHHHH!!!*/
+
+}
+.iconSelect{
+	background-color: grey;
+	width:auto;
+	cursor: pointer;
+}
+
+.navLinks .burger{
+	background-color: white;
+	padding:10px;
+	display: none;
+}
+.navLinks .closeIcon{
+	background-color: white;
+	padding:10px;
+	display: none;
+	
+
+	
+}
+
+.navLinks ul{
+	display:flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	list-style: none;
+}
+.navLinks ul li{
+	padding:10px;
+}
+.navLinks ul  a{
+	text-decoration: none;
+}
+#homePage{
+	background-color: yellow;
+	width:100%;
+/*	height:93vh; */
+    height:100vh;
+	margin:auto;
+	border:1px solid red;
+}
+#homePage{
+	background-image: url("laptop.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+	align-content: center;
+
+}
+
+/**
+.circle{
+	width:40px;
+	height:40px;
+	border-radius: 30px;
+	background-color: red;
+	
+	animation:3s linear move;
+	
+}
+*/
+.homePageFlex{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	background-color: yellow;
+	position:absolute;
+	width:50%;
+	height:50%;
+	top:25%;
+	left:25%;
+
+}
+
+#aboutUs{
+	background-color: brown;
+	border:1px solid black;
+	color:white;
+	height:500px;
+	margin-top:0;
+}
+
+#services{
+	background-color: purple;
+	/*border:1px solid black;  */  /** this is an issue.. when border is mentioned , then only the backgrnd color i filling up the div !! thats is not expected though!!, ryt??!! */
+	
+	color:white;
+	height:500px;
+	margin-top:0;
+
+}
+.homePageflex h3{
+
+}
+
+.footerClass{
+	background:blue;  /*** use background!!  */
+	background-clip: padding-box;   /** to what extent bckgrnd should go!! */
+		/*border:2px solid black; */
+}
+
+
+/**
+@keyframes move{
+	from{transform : margin-left:0px;}
+	to{transform: margin-left:100%;}
+}
+
+**/
+
+@media screen and (max-width: 600px){
+	.headerClass{
+		display:block;
+		height:7vh;
+
+	}
+	.logo{
+		position:fixed;
+		left:45%;
+	}
+	.navLinks ul{
+		display:flex ;
+		flex-direction: column;
+		position:absolute;
+		top:7vh; /*with respect to its previus or parent?! */ 
+		right:0px;
+		background-color: brown;
+		transform: translateX(100%);
+		transition: transform 0.2s ease-in;
+
+
+	}
+
+	.headerClass .navLinks .navLinks-onScreen{
+		transform: translateX(0%);
+	}
+	.navLinks .burger{
+		display: block;
+		
+
+		margin-right:10px;
+
+	}
+
+	.navLinks .closeIcon{
+		display: none;
+		margin-right:auto;
+
+		
+	}
+	.navLinks{
+		display:flex;
+		justify-content: flex-end;
+	}
+
+	.closeOnly .burger{
+		display:none;
+	}
+	.closeOnly .closeIcon{
+		display:block;
+		margin-right: 10px;
+	}
+
+
+
+	
+}
